@@ -17,12 +17,13 @@ while True:
         Playerchoice = input("R, P, or S: ").upper()
 
     # Tie condition
-    if Playerchoice == CPUchoice:
+    while Playerchoice == CPUchoice:
         print(f"Player ({Playerchoice}) : CPU ({CPUchoice}) ")
-        print("Tie!")
+        print("Tie! Select new option")
+        Playerchoice = input("R, P, or S: ").upper()
 
     # Conditions to determine winner
-    elif Playerchoice == "R":
+    if Playerchoice == "R":
         if CPUchoice == "P":
             print("Player (Rock) : CPU (Paper)")
             print("Paper covered Rock")
@@ -52,8 +53,6 @@ while True:
             print("Player (Scissors) : CPU (Paper)")
             print("Scissors cut paper")
             print("Player Won!")
-
-
 
     play_again = input("Play again? (y/n): ").lower()
 
